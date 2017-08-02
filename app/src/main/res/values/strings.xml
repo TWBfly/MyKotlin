@@ -5,5 +5,7 @@
     <string name="tab_three">动漫资讯</string>
     <string name="action_about">我的kotlin</string>
     <string name="network_error">网络错误,请重试!</string>
+    <string name="page_load_error">加载错误</string>
+    <string name="more">MORE</string>
 
 </resources>
