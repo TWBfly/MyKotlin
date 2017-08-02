@@ -1,5 +1,6 @@
 package win.tommy.mykotlin.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -16,7 +17,9 @@ import win.tommy.mykotlin.ui.activity.fragment.NewsFragment
 
 class MainActivity : AppCompatActivity() {
 
-
+    companion object {
+        val url="https://github.com/TWBfly/MyKotlin"
+    }
     val nameResList : ArrayList<Int> = arrayListOf(R.string.tab_one, R.string.tab_two, R.string.tab_three)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +45,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun jump2MyGithub() {
-        Log.e("twb","jump2MyGithub被点击了...")
+        val intent = Intent(this,GitHubActivity().javaClass)
+        intent.putExtra("GITURL", url)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
