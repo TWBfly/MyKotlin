@@ -1,6 +1,8 @@
 package win.tommy.mykotlin.util
 
 import android.content.Context
+import android.support.design.widget.Snackbar
+import android.view.View
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.Toast
@@ -28,4 +30,12 @@ fun ImageView.loadUrl(url: String) {
     Picasso.with(this.context)
             .load(url)
             .into(this)
+}
+
+fun View.snackbar(message: String, duration: Int = Snackbar.LENGTH_SHORT) {
+    Snackbar.make(this, message, duration).show()
+}
+
+fun View.snackbar(messageRes: Int, duration: Int = Snackbar.LENGTH_SHORT) {
+    Snackbar.make(this, messageRes, duration).show()
 }

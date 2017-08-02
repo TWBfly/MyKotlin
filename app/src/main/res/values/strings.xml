@@ -4,5 +4,6 @@
     <string name="tab_two">漫画列表</string>
     <string name="tab_three">动漫资讯</string>
     <string name="action_about">我的kotlin</string>
+    <string name="network_error">网络错误,请重试!</string>
 
 </resources>

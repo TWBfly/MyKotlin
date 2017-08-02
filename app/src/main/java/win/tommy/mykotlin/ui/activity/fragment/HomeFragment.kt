@@ -1,5 +1,6 @@
 package win.tommy.mykotlin.ui.activity.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
@@ -15,6 +16,7 @@ import org.jetbrains.anko.uiThread
 import win.tommy.mykotlin.R
 import win.tommy.mykotlin.bean.Cover
 import win.tommy.mykotlin.domain.net.CoverSource
+import win.tommy.mykotlin.ui.activity.ComicActivity
 import win.tommy.mykotlin.ui.activity.adapter.AnotherAdapter
 import win.tommy.mykotlin.ui.activity.binder.CoverBinder
 import java.util.*
@@ -66,7 +68,9 @@ class HomeFragment: Fragment() {
     }
 
     private fun jump2Comic(cover: Cover) {
-    Log.e("twv","jump2Comic=="+cover)
+        val intent = Intent(context, ComicActivity().javaClass)
+        intent.putExtra(ComicActivity.INTENT_COMIC_URL, cover.link)
+        startActivity(intent)
 
     }
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
